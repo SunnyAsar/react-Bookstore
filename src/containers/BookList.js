@@ -1,5 +1,6 @@
 import React from 'react'
 import Book from '../components/Book'
+import { connect } from 'react-redux'
 
 const BookList = (props) => {
   return (
@@ -7,10 +8,10 @@ const BookList = (props) => {
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th>#</th>
+            <th>Title</th>
+            <th>Category</th>
+            <th>actions</th>
           </tr>
         </thead>
         <tbody>
@@ -22,3 +23,11 @@ const BookList = (props) => {
     </div>
   )
 }
+
+function mapStateToProps (state) {
+  return {
+    books: state.books
+  }
+}
+
+export default connect(mapStateToProps, null)(BookList)
