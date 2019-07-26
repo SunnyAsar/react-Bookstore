@@ -11,3 +11,10 @@ export function removeBook (book) {
     book
   }
 }
+
+export function changeBooksFilter (filter) {
+  return {
+    type: 'CHANGE_FILTER',
+    filter
+  }
+}

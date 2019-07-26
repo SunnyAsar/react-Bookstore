@@ -1,11 +1,13 @@
 import React from 'react'
 import Book from '../components/Book'
+import CategoryFilter from '../components/CategoryFilter'
 import { connect } from 'react-redux'
 
-const BookList = (props) => {
-
+const BookList = ({ books, filter }) => {
+  books = filter === 'All' ? books : books.filter(book => book.category === filter)
   return (
     <div>
+      <CategoryFilter />
       <table class="table">
         <thead>
           <tr>
@@ -16,7 +18,7 @@ const BookList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {props.books.map((book) => (
+          {books.map((book) => (
             <Book book={book} />
           ))}
         </tbody>
@@ -27,7 +29,8 @@ const BookList = (props) => {
 
 function mapStateToProps (state) {
   return {
-    books: state.books
+    books: state.books,
+    filter: state.filter
   }
 }
 

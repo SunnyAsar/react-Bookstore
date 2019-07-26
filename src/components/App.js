@@ -6,8 +6,8 @@ import '../App.css'
 function App () {
   return (
     <div>
-      <BookForm />
       <BookList />
+      <BookForm />
     </div>
   )
 }
