@@ -1,21 +1,46 @@
 import React from 'react'
 import { changeBooksFilter } from '../actions'
 import { connect } from 'react-redux'
+import styled from '@emotion/styled'
 
-const CATEGORIES = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'] 
-const CategoryFilter = (props) => {
+const Template = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  span {
+    margin-right: 10px;
+  }
+`
+
+const CATEGORIES = [
+  'All',
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi'
+]
+
+function CategoryFilter (props) {
   return (
-    <div>
-      <select onChange={(e) => props.handleFilterChange(e.target.value)}>
-        {CATEGORIES.map(cat => <option key={cat}>{cat}</option>)}
+    <Template>
+      <span>Filter by:</span>
+      <select onChange={e => props.handleFilterChange(e.target.value)}>
+        {CATEGORIES.map(cat => (
+          <option key={cat}>{cat}</option>
+        ))}
       </select>
-    </div>
+    </Template>
   )
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return {
-    handleFilterChange: (filter) => {dispatch(changeBooksFilter(filter)) }
+    handleFilterChange: filter => {
+      dispatch(changeBooksFilter(filter))
+    }
   }
 }
 

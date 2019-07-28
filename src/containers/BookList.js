@@ -8,21 +8,11 @@ const BookList = ({ books, filter }) => {
   return (
     <div>
       <CategoryFilter />
-      <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map((book) => (
-            <Book book={book} />
-          ))}
-        </tbody>
-      </table>
+      <div>
+        {books.map((book) => (
+          <Book book={book} key={book.id} />
+        ))}
+      </div>
     </div>
   )
 }
