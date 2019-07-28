@@ -20,8 +20,9 @@ const BookItem = styled.div`
     margin-top: 4px;
     font-size: 22px;
   }
-  a {
+  button {
     color: #4386bf;
+    background-color: white;
     font-size: 14px;
     cursor: pointer;
     padding: 5px 15px;
@@ -38,7 +39,7 @@ const Book = ({ book, handleRemoveBook }) => {
     <BookItem>
       <div className='category'>{book.category}</div>
       <h3>{book.title}</h3>
-      <a onClick={() => handleRemoveBook(book)}>Delete</a>
+      <button onClick={() => handleRemoveBook(book)}>Delete</button>
     </BookItem>
   )
 }

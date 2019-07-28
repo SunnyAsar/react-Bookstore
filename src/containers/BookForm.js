@@ -4,6 +4,16 @@ import { createBook } from '../actions'
 import styled from '@emotion/styled'
 
 const Template = styled.div`
+  margin-bottom: 40px;
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+    color: #888;
+    margin-top: 40px;
+    padding-top: 29px;
+    border-top: 1px solid #e8e8e8;
+    margin-bottom: 19px;
+  }
   form {
     display: flex;
   }
@@ -24,6 +34,7 @@ const SubmitButton = styled.button`
   width: 184px;
   border-radius: 3px;
   font-size: 13px;
+  cursor: pointer;
 `
 
 const CATEGORIES = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'] 
@@ -48,6 +59,7 @@ class BookForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    if (this.state.input === '') return alert('Please add a book name')
     this.props.handleCreateBook({
       title: this.state.input,
       category: this.state.category
@@ -60,6 +72,7 @@ class BookForm extends React.Component {
   render(){
     return (
       <Template>
+        <h2>ADD NEW BOOK</h2>
         <form onSubmit={this.handleSubmit}>
           <input value={ this.state.input } onChange={this.handleTitleChange} placeholder="Enter a Book" />
           <select onChange={this.handleCategoryChange}>
