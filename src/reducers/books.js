@@ -1,4 +1,3 @@
-import uuid from 'uuid/v1'
 
 const SET_BOOKS_COLLECTION = 'SET_BOOKS_COLLECTION'
 const CREATE_BOOK = 'CREATE_BOOK'
@@ -11,8 +10,7 @@ const bookReducer = (state = InitialState, action) => {
     case SET_BOOKS_COLLECTION:
       return action.books.map(({ id, title, category }) => ({ id, title, category }))
     case CREATE_BOOK:
-      const newBook = { ...action.book, id: uuid() }
-      return [...state, newBook]
+      return [...state, action.book]
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.book.id)
     default:

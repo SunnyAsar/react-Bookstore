@@ -18,4 +18,15 @@ booksService.create = function (book) {
   }).then(res => res.json())
 }
 
+booksService.delete = function (id) {
+  return fetch(`${BASE_URL}/books/${id}`, {
+    method: 'DELETE',
+    mode: 'cors'
+  }).then((res) => {
+    return res.json()
+  }).catch(err => {
+    console.error(err)
+  })
+}
+
 export default booksService

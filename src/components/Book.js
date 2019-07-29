@@ -46,7 +46,7 @@ const Book = ({ book, handleRemoveBook }) => {
 
 function mapDispatchToProp (dispatch) {
   return {
-    handleRemoveBook: (book) => dispatch(removeBook(book))
+    handleRemoveBook: (book) => removeBook(dispatch, book)
   }
 }
 

@@ -15,16 +15,19 @@ export async function createBook (dispatch, book) {
   const newBook = await bookService.create(book)
   dispatch({
     type: 'CREATE_BOOK',
-    newBook
+    book: newBook
   })
   dispatch({ type: 'STOP_LOADER' })
 }
 
-export function removeBook (book) {
-  return {
+export async function removeBook (dispatch, book) {
+  dispatch({ type: 'START_LOADER' })
+  const removeBook = await bookService.delete(book.id)
+  dispatch({
     type: 'REMOVE_BOOK',
     book
-  }
+  })
+  dispatch({ type: 'STOP_LOADER' })
 }
 
 export function changeBooksFilter (filter) {
