@@ -6,7 +6,7 @@ const Spinner = styled.div`
   display: inline-block;
   width: 84px;
   height: 84px;
-​
+
   &:after {
     content: " ";
     display: block;
@@ -18,7 +18,7 @@ const Spinner = styled.div`
     border-color: #0290ff transparent #0290ff transparent;
     animation: lds-dual-ring 1.2s linear infinite;
   }
-​
+
   @keyframes lds-dual-ring {
     0% {
       transform: rotate(0deg);
