@@ -2,10 +2,10 @@ import bookService from '../services/books'
 
 export async function fetchBooks (dispatch) {
   dispatch({ type: 'START_LOADER' })
-  const allBooks = await bookService.getAll()
+  const books = await bookService.getAll()
   dispatch({
     type: 'SET_BOOKS_COLLECTION',
-    allBooks
+    books
   })
   dispatch({ type: 'STOP_LOADER' })
 }

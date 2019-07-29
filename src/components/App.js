@@ -15,10 +15,12 @@ class App extends React.Component {
     return (
       <div>
         <Navbar />
-        <Loader className='container'>
-          <BookList />
-          <BookForm />
-        </Loader>
+        <div className='container'>
+          <Loader>
+            <BookList />
+            <BookForm />
+          </Loader>
+        </div>
       </div>
     )
   }
