@@ -3,10 +3,7 @@ import uuid from 'uuid/v1'
 const CREATE_BOOK = 'CREATE_BOOK'
 const REMOVE_BOOK = 'REMOVE_BOOK'
 
-const InitialState = [
-  { id: uuid(), title: 'Quantum life', category: 'Sci-Fi' },
-  { id: uuid(), title: 'Mind secrets', category: 'Learning' }
-]
+const InitialState = []
 
 const bookReducer = (state = InitialState, action) => {
   switch (action.type) {
