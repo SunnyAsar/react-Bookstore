@@ -5,28 +5,29 @@ const booksService = {}
 booksService.getAll = function () {
   return fetch(`${BASE_URL}/books`, { mode: 'cors' })
     .then(res => res.json())
+    .catch(errorHandler)
 }
 
 booksService.create = function (book) {
   return fetch(`${BASE_URL}/books`, {
     method: 'POST',
     body: JSON.stringify(book),
-    headers:{
+    headers: {
       'Content-Type': 'application/json'
     },
     mode: 'cors'
   }).then(res => res.json())
+    .catch(errorHandler)
 }
 
 booksService.delete = function (id) {
   return fetch(`${BASE_URL}/books/${id}`, {
     method: 'DELETE',
     mode: 'cors'
-  }).then((res) => {
-    return res.json()
-  }).catch(err => {
-    console.error(err)
-  })
+  }).then(res => res.json())
+    .catch(errorHandler)
 }
+
+const errorHandler = (err) => console.log(err)
 
 export default booksService
