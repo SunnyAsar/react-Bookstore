@@ -36,13 +36,13 @@ const SpinnerContainer = styled.div`
   align-items: center;
 `
 
-function Loader ({ isLoading, children }) {
+const Loader = ({ isLoading, children }) => {
   if (isLoading) return <SpinnerContainer><Spinner /></SpinnerContainer>
   return <div>{children}</div>
 }
 
-function mapStateToProps (state) {
-  return { isLoading: state.loader }
-}
+const mapStateToProps = state => ({
+  isLoading: state.loader
+})
 
 export default connect(mapStateToProps, null)(Loader)

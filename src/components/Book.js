@@ -44,10 +44,8 @@ const Book = ({ book, handleRemoveBook }) => {
   )
 }
 
-function mapDispatchToProp (dispatch) {
-  return {
-    handleRemoveBook: (book) => removeBook(dispatch, book)
-  }
-}
+const mapDispatchToProp = (dispatch) => ({
+  handleRemoveBook: (book) => removeBook(dispatch, book)
+})
 
 export default connect(null, mapDispatchToProp)(Book)

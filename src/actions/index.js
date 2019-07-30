@@ -1,6 +1,6 @@
 import bookService from '../services/books'
 
-export async function fetchBooks (dispatch) {
+export const fetchBooks = async (dispatch) => {
   dispatch({ type: 'START_LOADER' })
   try {
     const books = await bookService.getAll()
@@ -15,7 +15,7 @@ export async function fetchBooks (dispatch) {
   }
 }
 
-export async function createBook (dispatch, book) {
+export const createBook = async (dispatch, book) => {
   dispatch({ type: 'START_LOADER' })
   try {
     const newBook = await bookService.create(book)
@@ -30,7 +30,7 @@ export async function createBook (dispatch, book) {
   }
 }
 
-export async function removeBook (dispatch, book) {
+export const removeBook = async (dispatch, book) => {
   dispatch({ type: 'START_LOADER' })
   try {
     await bookService.delete(book.id)
@@ -45,7 +45,7 @@ export async function removeBook (dispatch, book) {
   }
 }
 
-export function changeBooksFilter (filter) {
+export const changeBooksFilter = async (filter) => {
   return {
     type: 'CHANGE_FILTER',
     filter

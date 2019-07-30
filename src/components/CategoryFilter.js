@@ -23,7 +23,7 @@ const CATEGORIES = [
   'Sci-Fi'
 ]
 
-function CategoryFilter (props) {
+const CategoryFilter = (props) => {
   return (
     <Template>
       <span>Filter by:</span>
@@ -36,12 +36,8 @@ function CategoryFilter (props) {
   )
 }
 
-function mapDispatchToProps (dispatch) {
-  return {
-    handleFilterChange: filter => {
-      dispatch(changeBooksFilter(filter))
-    }
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  handleFilterChange: filter => dispatch(changeBooksFilter(filter))
+})
 
 export default connect(null, mapDispatchToProps)(CategoryFilter)

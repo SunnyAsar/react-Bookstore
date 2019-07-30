@@ -17,11 +17,9 @@ const BookList = ({ books, filter }) => {
   )
 }
 
-function mapStateToProps (state) {
-  return {
-    books: state.books,
-    filter: state.filter
-  }
-}
+const mapStateToProps = state => ({
+  books: state.books,
+  filter: state.filter
+})
 
 export default connect(mapStateToProps, null)(BookList)

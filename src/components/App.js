@@ -26,10 +26,8 @@ class App extends React.Component {
   }
 }
 
-function mapDispatchToProps (dispatch) {
-  return {
-    fetchBooks: () => fetchBooks(dispatch)
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  fetchBooks: () => fetchBooks(dispatch)
+})
 
 export default connect(null, mapDispatchToProps)(App)

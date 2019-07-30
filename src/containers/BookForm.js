@@ -85,10 +85,8 @@ class BookForm extends React.Component {
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return {
+const mapDispatchToProps = dispatch => ({
     handleCreateBook: (book)=> createBook(dispatch, book)
-  }
-}
+})
 
 export default connect(null, mapDispatchToProps)(BookForm)
