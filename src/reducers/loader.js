@@ -1,5 +1,4 @@
-const START_LOADER = 'START_LOADER'
-const STOP_LOADER = 'STOP_LOADER'
+import { START_LOADER, STOP_LOADER } from '../actions/actionConstants'
 
 const loaderReducer = (state = true, actions) => {
   switch (actions.type) {

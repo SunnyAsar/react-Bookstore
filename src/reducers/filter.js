@@ -1,4 +1,4 @@
-const CHANGE_FILTER = 'CHANGE_FILTER'
+import { CHANGE_FILTER } from '../actions/actionConstants'
 
 const filterReducer = (state = 'All', action) => {
   switch (action.type) {

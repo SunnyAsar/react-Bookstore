@@ -1,7 +1,4 @@
-
-const SET_BOOKS_COLLECTION = 'SET_BOOKS_COLLECTION'
-const CREATE_BOOK = 'CREATE_BOOK'
-const REMOVE_BOOK = 'REMOVE_BOOK'
+import { SET_BOOKS_COLLECTION, CREATE_BOOK, REMOVE_BOOK } from '../actions/actionConstants'
 
 const InitialState = []
 
