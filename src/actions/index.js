@@ -1,54 +1,63 @@
 import bookService from '../services/books'
-import { START_LOADER, STOP_LOADER, CREATE_BOOK, SET_BOOKS_COLLECTION, REMOVE_BOOK, CHANGE_FILTER } from './actionConstants'
+import {
+  START_LOADER, STOP_LOADER, CREATE_BOOK,
+  SET_BOOKS_COLLECTION, REMOVE_BOOK, CHANGE_FILTER
+} from './actionConstants'
 
-export const fetchBooks = async (dispatch) => {
-  dispatch(startLoader())
-  return (dispatch, getState) => {
-    const books = bookService.getAll()
-    dispatch(setBooks(books))
-    dispatch(stopLoader)
-  }
-}
+const startLoading = () => ({ type: START_LOADER })
+const stopLoading = () => ({ type: STOP_LOADER })
 
 export const setBooks = (books) => ({
   type: SET_BOOKS_COLLECTION,
   books
 })
 
-export const createBook = async (dispatch, book) => {
-  dispatch({ type: START_LOADER })
-  try {
-    const newBook = await bookService.create(book)
-    dispatch({
-      type: CREATE_BOOK,
-      book: newBook
-    })
-  } catch (error) {
-    console.log(error)
-  } finally {
-    dispatch({ type: STOP_LOADER })
-  }
-}
+export const createBook = (book) => ({
+  type: CREATE_BOOK,
+  book
+})
 
-export const removeBook = async (dispatch, book) => {
-  dispatch({ type: START_LOADER })
-  try {
-    await bookService.delete(book.id)
-    dispatch({
-      type: REMOVE_BOOK,
-      book
-    })
-  } catch (error) {
-    console.log(error)
-  } finally {
-    dispatch({ type: STOP_LOADER })
-  }
-}
+export const removeBook = (book) => ({
+  type: REMOVE_BOOK,
+  book
+})
 
 export const changeBooksFilter = (filter) => ({
   type: CHANGE_FILTER,
   filter
 })
 
-export const startLoader = () => ({ type: START_LOADER })
-export const stopLoader = () => ({ type: STOP_LOADER })
+const asyncActionHandler = async (dispatch, callback) => {
+  dispatch(startLoading())
+  try {
+    await callback()
+  } catch (error) {
+    console.log(error)
+  } finally {
+    dispatch(stopLoading())
+  }
+}
+
+export const fetchBooks = () =>
+  dispatch => asyncActionHandler(dispatch,
+    async () => {
+      const books = await bookService.getAll()
+      dispatch(setBooks(books))
+    }
+  )
+
+export const createBookAsync = (book) =>
+  dispatch => asyncActionHandler(dispatch,
+    async () => {
+      const newBook = await bookService.create(book)
+      dispatch(createBook(newBook))
+    }
+  )
+
+export const removeBookAsync = (book) =>
+  dispatch => asyncActionHandler(dispatch,
+    async () => {
+      const deletedBook = await bookService.delete(book.id)
+      dispatch(removeBook(deletedBook))
+    }
+  )

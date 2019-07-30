@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { removeBook } from '../actions'
+import { removeBookAsync } from '../actions'
 import styled from '@emotion/styled'
 
 const BookItem = styled.div`
@@ -45,7 +45,7 @@ const Book = ({ book, handleRemoveBook }) => {
 }
 
 const mapDispatchToProp = (dispatch) => ({
-  handleRemoveBook: (book) => dispatch(removeBook(book))
+  handleRemoveBook: (book) => dispatch(removeBookAsync(book))
 })
 
 export default connect(null, mapDispatchToProp)(Book)

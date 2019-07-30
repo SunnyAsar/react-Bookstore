@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createBook } from '../actions'
+import { createBookAsync } from '../actions'
 import styled from '@emotion/styled'
 
 const Template = styled.div`
@@ -86,6 +86,7 @@ class BookForm extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    handleCreateBook: (book)=> dispatch(createBook(book))
+    handleCreateBook: (book) => dispatch(createBookAsync(book))
 })
+
 export default connect(null, mapDispatchToProps)(BookForm)
