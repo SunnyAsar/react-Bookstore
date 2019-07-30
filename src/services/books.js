@@ -1,32 +1,25 @@
+import axios from 'axios'
+
 const BASE_URL = process.env.BASE_URL || 'http://localhost:4000'
+
+const BOOKS_URL = `${BASE_URL}/books`
 
 const booksService = {}
 
-booksService.getAll = function () {
-  return fetch(`${BASE_URL}/books`, { mode: 'cors' })
-    .then(res => res.json())
+booksService.getAll = () =>
+  axios.get(BOOKS_URL)
+    .then(res => res.data)
     .catch(errorHandler)
-}
 
-booksService.create = function (book) {
-  return fetch(`${BASE_URL}/books`, {
-    method: 'POST',
-    body: JSON.stringify(book),
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    mode: 'cors'
-  }).then(res => res.json())
+booksService.create = (book) =>
+  axios.post(BOOKS_URL, book)
+    .then(res => res.data)
     .catch(errorHandler)
-}
 
-booksService.delete = function (id) {
-  return fetch(`${BASE_URL}/books/${id}`, {
-    method: 'DELETE',
-    mode: 'cors'
-  }).then(res => res.json())
+booksService.delete = (id) =>
+  axios.delete(`${BOOKS_URL}/${id}`)
+    .then(res => res.data)
     .catch(errorHandler)
-}
 
 const errorHandler = (err) => console.log(err)
 
