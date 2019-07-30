@@ -45,7 +45,7 @@ const Book = ({ book, handleRemoveBook }) => {
 }
 
 const mapDispatchToProp = (dispatch) => ({
-  handleRemoveBook: (book) => removeBook(dispatch, book)
+  handleRemoveBook: (book) => dispatch(removeBook(book))
 })
 
 export default connect(null, mapDispatchToProp)(Book)
