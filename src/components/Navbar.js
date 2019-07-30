@@ -8,7 +8,6 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   box-shadow: 0 0 6px rgba(0,0,0,.1);
-  margin-bottom: 30px;
 `
 
 const Navbar = () => {

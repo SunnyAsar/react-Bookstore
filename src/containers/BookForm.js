@@ -59,7 +59,6 @@ class BookForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    if (this.state.input === '') return alert('Please add a book name')
     this.props.handleCreateBook({
       title: this.state.input,
       category: this.state.category
@@ -86,7 +85,7 @@ class BookForm extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    handleCreateBook: (book) => dispatch(createBookAsync(book))
+    handleCreateBook: (book) => dispatch(createBookAsync(book)),
 })
 
 export default connect(null, mapDispatchToProps)(BookForm)

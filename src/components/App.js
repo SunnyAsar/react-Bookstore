@@ -1,10 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { fetchBooks } from '../actions'
 import BookList from '../containers/BookList'
 import BookForm from '../containers/BookForm'
 import Navbar from '../components/Navbar'
 import Loader from './loader'
-import { fetchBooks } from '../actions'
-import { connect } from 'react-redux'
+import Alert from './Alert'
 
 class App extends React.Component {
   componentDidMount () {
@@ -16,6 +17,7 @@ class App extends React.Component {
       <div>
         <Navbar />
         <div className='container'>
+          <Alert />
           <Loader>
             <BookList />
             <BookForm />

@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 const BookList = ({ books, filter }) => {
   books = filter === 'All' ? books : books.filter(book => book.category === filter)
   return (
-    <div>
+    <div style={{ marginTop: '30px' }}>
       <CategoryFilter />
       <div>
         {books.map((book) => (
