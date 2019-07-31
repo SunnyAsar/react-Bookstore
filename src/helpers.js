@@ -7,3 +7,7 @@ export const generateErrorText = (err) => {
   }
   return msg.slice(0, -2)
 }
+
+export const filterBooks = (books, categoryFilter) => {
+  return books.filter(({ category }) => categoryFilter === 'All' ? true : category === categoryFilter)
+}

@@ -27,7 +27,7 @@ const CategoryFilter = (props) => {
   return (
     <Template>
       <span>Filter by:</span>
-      <select onChange={e => props.handleFilterChange(e.target.value)}>
+      <select onChange={e => props.changeBooksFilter(e.target.value)}>
         {CATEGORIES.map(cat => (
           <option key={cat}>{cat}</option>
         ))}
@@ -36,8 +36,4 @@ const CategoryFilter = (props) => {
   )
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  handleFilterChange: filter => dispatch(changeBooksFilter(filter))
-})
-
-export default connect(null, mapDispatchToProps)(CategoryFilter)
+export default connect(null, { changeBooksFilter })(CategoryFilter)

@@ -34,18 +34,14 @@ const BookItem = styled.div`
   }
 `
 
-const Book = ({ book, handleRemoveBook }) => {
+const Book = ({ book, removeBookAsync }) => {
   return (
     <BookItem>
       <div className='category'>{book.category}</div>
       <h3>{book.title}</h3>
-      <button onClick={() => handleRemoveBook(book)}>Delete</button>
+      <button onClick={() => removeBookAsync(book)}>Delete</button>
     </BookItem>
   )
 }
 
-const mapDispatchToProp = (dispatch) => ({
-  handleRemoveBook: (book) => dispatch(removeBookAsync(book))
-})
-
-export default connect(null, mapDispatchToProp)(Book)
+export default connect(null, { removeBookAsync })(Book)

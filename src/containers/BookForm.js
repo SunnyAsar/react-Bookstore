@@ -59,13 +59,15 @@ class BookForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.handleCreateBook({
+    this.props.createBookAsync({
       title: this.state.input,
       category: this.state.category
-    })
-    this.setState({
-      input: ''
-    })
+    }).then(
+      this.setState({
+        input: ''
+      })
+    )
+    
   }
 
   render(){
@@ -84,8 +86,4 @@ class BookForm extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-    handleCreateBook: (book) => dispatch(createBookAsync(book)),
-})
-
-export default connect(null, mapDispatchToProps)(BookForm)
+export default connect(null, { createBookAsync })(BookForm)

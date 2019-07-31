@@ -1,10 +1,10 @@
 import React from 'react'
 import Book from '../components/Book'
 import CategoryFilter from '../components/CategoryFilter'
+import { filterBooks } from '../helpers'
 import { connect } from 'react-redux'
 
-const BookList = ({ books, filter }) => {
-  books = filter === 'All' ? books : books.filter(book => book.category === filter)
+const BookList = ({ books }) => {
   return (
     <div style={{ marginTop: '30px' }}>
       <CategoryFilter />
@@ -18,8 +18,7 @@ const BookList = ({ books, filter }) => {
 }
 
 const mapStateToProps = state => ({
-  books: state.books,
-  filter: state.filter
+  books: filterBooks(state.books, state.filter)
 })
 
 export default connect(mapStateToProps, null)(BookList)
