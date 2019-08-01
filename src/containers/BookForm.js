@@ -45,15 +45,9 @@ class BookForm extends React.Component {
     category: CATEGORIES[0]
   }
 
-  handleTitleChange = (e) => {
+  handleChange = (e) => {
     this.setState({
-      input: e.target.value
-    })
-  }
-
-  handleCategoryChange = (e) => {
-    this.setState({
-      category: e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
@@ -67,7 +61,7 @@ class BookForm extends React.Component {
         input: ''
       })
     )
-    
+
   }
 
   render(){
@@ -75,8 +69,8 @@ class BookForm extends React.Component {
       <Template>
         <h2>ADD NEW BOOK</h2>
         <form onSubmit={this.handleSubmit}>
-          <input value={ this.state.input } onChange={this.handleTitleChange} placeholder="Enter a Book" />
-          <select onChange={this.handleCategoryChange}>
+          <input name='input' value={ this.state.input } onChange={this.handleChange} placeholder="Enter a Book" />
+          <select name='category' onChange={this.handleChange}>
             { CATEGORIES.map((cat) => (<option  value={cat} key={cat} > {cat} </option>)) }
           </select>
           <SubmitButton>ADD BOOK</SubmitButton>
