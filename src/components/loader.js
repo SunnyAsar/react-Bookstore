@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import styled from '@emotion/styled'
 
 const Spinner = styled.div`
-  margin-top: 30px;
   display: inline-block;
   width: 84px;
   height: 84px;
@@ -30,6 +29,7 @@ const Spinner = styled.div`
   }
 `
 const SpinnerContainer = styled.div`
+  margin-top: 30px;
   background-color: white;
   padding: 40px;
   display: flex;
