@@ -1,4 +1,4 @@
-import bookService from '../services/books'
+import bookService from '../services/books-stub'
 import {
   START_LOADER, STOP_LOADER, CREATE_BOOK,
   SET_BOOKS_COLLECTION, REMOVE_BOOK, CHANGE_FILTER,
