@@ -1,7 +1,7 @@
 import React from 'react'
 import Book from '../components/Book'
 import CategoryFilter from '../components/CategoryFilter'
-import { filterBooks } from '../helpers'
+import { filterBooks } from '../libs/helpers'
 import { connect } from 'react-redux'
 
 const BookList = ({ books }) => {

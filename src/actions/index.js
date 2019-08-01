@@ -4,7 +4,7 @@ import {
   SET_BOOKS_COLLECTION, REMOVE_BOOK, CHANGE_FILTER,
   SHOW_ALERT, HIDE_ALERT
 } from './actionConstants'
-import { generateErrorText } from '../helpers'
+import { generateErrorText } from '../libs/helpers'
 
 const startLoading = () => ({ type: START_LOADER })
 const stopLoading = () => ({ type: STOP_LOADER })
