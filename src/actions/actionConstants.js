@@ -1,0 +1,8 @@
+export const START_LOADER = 'START_LOADER'
+export const STOP_LOADER = 'STOP_LOADER'
+export const REMOVE_BOOK = 'REMOVE_BOOK'
+export const CREATE_BOOK = 'CREATE_BOOK'
+export const CHANGE_FILTER = 'CHANGE_FILTER'
+export const SET_BOOKS_COLLECTION = 'SET_BOOKS_COLLECTION'
+export const SHOW_ALERT = 'SHOW_ALERT'
+export const HIDE_ALERT = 'HIDE_ALERT'
