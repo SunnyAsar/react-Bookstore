@@ -1,4 +1,4 @@
-import bookService from '../services/books-stub'
+import bookService from '../services/books-stub' // Replace "books-stub" with "books" to connect with the backend
 import {
   START_LOADER, STOP_LOADER, CREATE_BOOK,
   SET_BOOKS_COLLECTION, REMOVE_BOOK, CHANGE_FILTER,
