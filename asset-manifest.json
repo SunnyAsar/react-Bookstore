@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-Bookstore/static/css/main.ecadd82a.chunk.css",
+    "main.js": "/react-Bookstore/static/js/main.869ffaf6.chunk.js",
+    "main.js.map": "/react-Bookstore/static/js/main.869ffaf6.chunk.js.map",
+    "runtime~main.js": "/react-Bookstore/static/js/runtime~main.4472750d.js",
+    "runtime~main.js.map": "/react-Bookstore/static/js/runtime~main.4472750d.js.map",
+    "static/js/2.8fa76f34.chunk.js": "/react-Bookstore/static/js/2.8fa76f34.chunk.js",
+    "static/js/2.8fa76f34.chunk.js.map": "/react-Bookstore/static/js/2.8fa76f34.chunk.js.map",
+    "index.html": "/react-Bookstore/index.html",
+    "precache-manifest.b091d9bf265d6d599b5160d515d3d049.js": "/react-Bookstore/precache-manifest.b091d9bf265d6d599b5160d515d3d049.js",
+    "service-worker.js": "/react-Bookstore/service-worker.js",
+    "static/css/main.ecadd82a.chunk.css.map": "/react-Bookstore/static/css/main.ecadd82a.chunk.css.map"
+  }
+}
