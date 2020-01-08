@@ -4,11 +4,11 @@ This is a Bookstore CMS build in reactjs  and redux.
 
 ![react bookstore screenshot](react-bookstore.png)
 
-[Live demo here](https://SunnyAsar.github.io/react-Bookstore/)
+<!-- [Live demo here](https://SunnyAsar.github.io/react-Bookstore/) -->
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purpose.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
