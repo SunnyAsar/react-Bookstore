@@ -1,6 +1,6 @@
 # React-Bookstore
 
-This is a Bookstore CMS build in reactjs  and redux.
+This is a Bookstore CMS build in React.js and redux.
 
 ![react bookstore screenshot](react-bookstore.png)
 
@@ -68,7 +68,7 @@ npm run build
 
 then you have to serve your static files
 
-> When you run the build script your going to see instructions about how to deploy the project in github pages.
+> When you run the build script you're going to see instructions about how to deploy the project in github pages.
 
 ## Contributors
 
